@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAU CORTIJO</title>
+
+    <link rel="stylesheet" href="contacto.css">
+    <script src="ESLAND.js"></script>
+  </head>
+<header>
+    <a href="PRODUCCIONES.html" class="brand">PAU</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="PRODUCCIONES.html">PRODUCCIONES</a>
+        <a href="VISUALS.html">VISUALS</a>
+        <a href="VIDEOS.html">VIDEOS</a>
+        <a href="contacto.html">CONTACTO</a>
+      </div>
+    </div>
+  </header>
+
+<body class="min-vh-100 d-flex flex-column">
+  <div class="content">
+    <div class="footer-social-icons">
+      <h4 class="_14">Me puedes contactar por:</h4>
+      <ul class="social-icons">
+          <li><b href="https://www.instagram.com/pau.cortijo/" class="social-icon"> <i class="fa fa-instagram"></i></b></li>
+          <li><b href="https://x.com/paucortijosa" class="social-icon"> <i class="fa fa-twitter"></i></b></li>
+          <li><b href="https://www.behance.net/paucortijo5270?locale=es_ES" class="social-icon"> <i class="fa fa-behance"></i></b></li>
+          <li><b href="https://www.youtube.com/@paucortijo" class="social-icon"> <i class="fa fa-youtube"></i></b></li>
+          <li><b href="https://www.linkedin.com/in/pau-cortijo-sari%C3%B1ena-bb9714187/?originalSubdomain=es" class="social-icon"> <i class="fa fa-linkedin"></i></b></li>
+          <li><b href="mailto:paucortijosa@gmail.com" class="social-icon"> <i class="fa fa-envelope"></i></b></li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script> 
+</body>
+
+</html>

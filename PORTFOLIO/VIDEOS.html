@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAU CORTIJO</title>
+    <link rel="stylesheet" href="style_responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="PRODUCCIONES.html" class="brand">PAU</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="PRODUCCIONES.html">PRODUCCIONES</a>
+          <a href="VISUALS.html">VISUALS</a>
+          <a href="VIDEOS.html">VIDEOS</a>
+          <a href="contacto.html">CONTACTO</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="VIDS/Albert Pla - Experiencia Religiosa (Videoclip oficial).mp4" autoplay muted loop></video>
+      <video class="video-slide" src="VIDS/Blog BCN.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="VIDS/cortijo_pau_duran_anna_MIRA_360_insta_V02.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="VIDS/X2Download.app-NUEVO VENTILADOR VIENA JUERIC-(1080p60).mp4" autoplay muted loop></video>
+      <video class="video-slide" src="VIDS/CONCIERTO_STRAY_FROGS_HORIZ.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>ALBERT PLA<br><span><small>POSPRODUCCIÓN / MAKIN OFF</small></span></h1>
+        <a href="PLA.html">Ver</a>
+      </div>
+      <div class="content">
+        <h1>VALORANT WATCHPARTY<br><span><small>YOUTUBE PARA OUTSHOT</small></span></h1>
+        <a href="OUT.html">Ver</a>
+      </div>
+      <div class="content">
+        <h1>MIRA FESTIVAL<br><span><small>VIDEO 360 (CONCEPT)</small></span></h1>
+        <a href="MIRA.html">Ver</a>
+      </div>
+      <div class="content">
+        <h1>JUERIC<br><span><small>VIDEOS PROMOCIONALES</small></span></h1>
+        <a href="JUERIC.html">Ver</a>
+      </div>
+      <div class="content">
+        <h1>STRAYFROGS<br><span><small>PORTADA / VISUALIZERS</small></span></h1>
+        <a href="FROGS.html">Ver</a>
+      </div>
+      <div class="media-icons">
+        <a href="https://www.behance.net/paucortijo5270/moodboards"target="_blank"><i class="fab fa-behance"></i></a>
+        <a href="https://www.instagram.com/pau.cortijo/"target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>

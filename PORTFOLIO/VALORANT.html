@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAU CORTIJO</title>
+
+    <link rel="stylesheet" href="PROYECTOS_1.css">
+    <script src="ESLAND.js"></script>
+  </head>
+<header>
+    <a href="PRODUCCIONES.html" class="brand">PAU</a>
+    <div class="menu-btn"></div>
+    <div class="navigation">
+      <div class="navigation-items">
+        <a href="PRODUCCIONES.html">PRODUCCIONES</a>
+        <a href="VISUALS.html">VISUALS</a>
+        <a href="VIDEOS.html">VIDEOS</a>
+        <a href="contacto.html">CONTACTO</a>
+      </div>
+    </div>
+  </header>
+
+<body class="min-vh-100 d-flex flex-column">
+  <div class="TITULO_PRODUCCION">
+    <h1 class="contenedor_01">
+      <p class="TITULO">VALORANT MASTERS 2024</p>
+      <p class="subtitulo">video promocional (concept)</p>
+      <iframe class="VIDEO" src="https://www.youtube.com/embed/99l4bVdy0J8?si=LrMt0Hx3s_4X3RFc" allowfullscreen></iframe>
+      <div class="pasar_proyecto">
+        <a href="PRODUCCIONES.html" class="submenu">menu</a>
+        <a>/</a>
+        <a href="MIXTUR.html" class="submenu">Siguiente proyecto</a>
+      </div>
+    </h1>
+  </div>
+  <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script> 
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAU CORTIJO</title>
+    <link rel="stylesheet" href="style_responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <header>
+      <a href="PRODUCCIONES.html" class="brand">PAU</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="PRODUCCIONES.html">PRODUCCIONES</a>
+          <a href="VISUALS.html">VISUALS</a>
+          <a href="VIDEOS.html">VIDEOS</a>
+          <a href="contacto.html">CONTACTO</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="VIDS/PARE_NOSTRE.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="VIDS/Cortijo_Pau_PI_2022_2023.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="VIDS/MIXTUR SIN CREDITOS.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="VIDS/Cortijo_Pau_Kinetic.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="VIDS/FINAL nft.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>PARE NOSTRE<br><span><small>POSPRODUCCIÓN DE LA PELÍCULA</small></span></h1>
+        <a href="COOMING_SOON.html">Ver</a>
+      </div>
+      <div class="content">
+        <h1>VALORANT MASTERS 2024<br><span><small>VIDEO PROMOCIONAL (CONCEPT VIDEO)</small></span></h1>
+        <a href="VALORANT.html">Ver</a>
+      </div>
+      <div class="content">
+        <h1>MIXTUR FESTIVAL<br><span><small>VIDEO PROMOCIONAL</small></span></h1>
+        <a href="MIXTUR.html">Ver</a>
+      </div>
+      <div class="content">
+        <h1>FITC TORONTO<br><span><small>VIDEO PROMOCIONAL (CONCEPT VIDEO)</small></span></h1>
+        <a href="FITC.html">Ver</a>
+      </div>
+      <div class="content">
+        <h1>NFT<br><span><small>VIDEO PROMOCIONAL PARA YOUTUBE</small></span></h1>
+        <a href="NFT.html">Ver</a>
+      </div>
+      <div class="media-icons">
+        <a href="https://www.behance.net/paucortijo5270/moodboards"target="_blank"><i class="fab fa-behance"></i></a>
+        <a href="https://www.instagram.com/pau.cortijo/"target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
